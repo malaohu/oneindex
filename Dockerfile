@@ -6,7 +6,7 @@ RUN apk add --no-cache nginx \
     && chown -R www-data:www-data cache/ config/ \
     && mv default.conf /etc/nginx/conf.d \
     && mv php.ini /usr/local/etc/php \
-    && && sed -i 's/^$/*\/10 * * * * \/usr\/local\/bin\/php \/var\/lib\/nginx\/html\/one.php cache:refresh/g'  /var/spool/cron/crontabs/root
+    && sed -i 's/^$/*\/10 * * * * \/usr\/local\/bin\/php \/var\/lib\/nginx\/html\/one.php cache:refresh/g'  /var/spool/cron/crontabs/root
 
 EXPOSE 80
 # Persistent config file and cache
